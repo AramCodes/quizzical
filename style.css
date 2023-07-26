@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&family=Karla:ital,wght@0,400;0,500;0,700;1,800&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #F5F7FB;
+    text-align: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/***********************
+    Main Screen(StartUp)
+************************/
+
+.title {
+    color: #293264;
+    font-family: Karla;
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: .44em;
+}
+
+.description {
+    max-width: 60ch;
+    margin: 0 auto 1.8em;
+    color: #293264;
+    font-family: Inter;
+    font-size: 1rem;
+}
+
+.start-btn {
+    border: 0;
+    border-radius: 15px;
+    background: #4D5B9E;
+    padding: 1.625em 4.50em;
+    color: #F5F7FB;
+    font-family: Inter;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+/***********************
+    Blobs
+************************/
+
+
+.top-right-blob {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.bottom-left-blob {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin-bottom: -25px;  
+}
+
+/***********************
+    Quiz Screen(Game)
+************************/
+
+.quiz-screen {
+     background-color: #F5F7FB;
+     height: 100vh;
+     width: 100vw;
+}
+
+.questions-container {
+    margin: 5rem auto;
+    display: flex;
+    flex-direction: column;
+    width: 73%;
+}
+
+.question-container {
+    padding: 2.5rem;
+    border-bottom: 1px solid #DBDEF0;
+}
+
+.question {
+    color: #293264;
+    font-family: Karla;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+/*choices*/
+
+.radio {
+    display: none;
+}
+
+.choice {
+    /*Button text*/
+    color: #293264;
+    font-family: Inter;
+    font-size: .625rem;
+    font-weight: 600;
+    
+    /*Button layout*/
+    margin: 1.2em 1.3em 1.5em;
+    border: 1px solid #4D5B9E;
+    border-radius: 8px;
+    padding: 1.05em 3.3em;
+}
+
+#option1:checked ~ .label-1,
+#option2:checked ~ .label-2,
+#option3:checked ~ .label-3,
+#option4:checked ~ .label-4 {
+    background-color: #D6DBF5;
+}
+        
+/* check answer and then switch state*/
+.state-button {
+    /*Button text*/
+    color: #F5F7FB;
+    font-family: Inter;
+    font-size: .6875rem;
+    font-weight: 600;
+    
+    /*Button layout*/
+     background-color: #4D5B9E;
+     padding: 1.6em 3.75em;
+     border-radius: 15px;
+     border: 0;
+}
+
+.button-container {
+    margin: 1.25rem auto 1.5625rem;
+}
