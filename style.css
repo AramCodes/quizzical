@@ -7,15 +7,19 @@
 body {
     background-color: #F5F7FB;
     text-align: center;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 100%;
+    /* user-select: none; */
 }
 
 /***********************
     Main Screen(StartUp)
 ************************/
+main {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
 .title {
     color: #293264;
@@ -34,14 +38,21 @@ body {
 }
 
 .start-btn {
+    /*Button Layout*/
     border: 0;
     border-radius: 15px;
     background: #4D5B9E;
     padding: 1.625em 4.50em;
+    
+    /*Button Text*/
+    cursor: pointer;
     color: #F5F7FB;
     font-family: Inter;
     font-size: 1rem;
     font-weight: 500;
+    
+    /*Button Experience*/
+    cursor: pointer;
 }
 
 /***********************
@@ -59,7 +70,6 @@ body {
     position: absolute;
     bottom: 0;
     left: 0;
-    margin-bottom: -25px;  
 }
 
 /***********************
@@ -67,9 +77,9 @@ body {
 ************************/
 
 .quiz-screen {
-     background-color: #F5F7FB;
-     height: 100vh;
-     width: 100vw;
+    background-color: #F5F7FB;
+    height: 100vh;
+    width: 100vw;
 }
 
 .questions-container {
@@ -80,6 +90,7 @@ body {
 }
 
 .question-container {
+    
     padding: 2.5rem;
     border-bottom: 1px solid #DBDEF0;
 }
@@ -91,35 +102,68 @@ body {
     font-weight: 700;
 }
 
+.answer-btn-container {
+    display: flex;
+    justify-content: center;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    
+}
+
 /*choices*/
 
-.radio {
-    display: none;
+.answer-btn {
+  /*Button text*/
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: #293264;
+  /*Button layout*/
+  padding: 4px 14px;
+  border: 1px solid #4d5b9e;
+  border-radius: 8px;
+  background-color: transparent;
+  margin: 10px
+  
 }
 
-.choice {
-    /*Button text*/
-    color: #293264;
-    font-family: Inter;
-    font-size: .625rem;
-    font-weight: 600;
-    
-    /*Button layout*/
-    margin: 1.2em 1.3em 1.5em;
-    border: 1px solid #4D5B9E;
-    border-radius: 8px;
-    padding: 1.05em 3.3em;
-}
-
-#option1:checked ~ .label-1,
-#option2:checked ~ .label-2,
-#option3:checked ~ .label-3,
-#option4:checked ~ .label-4 {
-    background-color: #D6DBF5;
-}
-        
 /* check answer and then switch state*/
-.state-button {
+
+.button-container {
+    margin: 1.25rem auto 1.5625rem;
+}
+
+/*Button Selction*/
+
+/*higlights user's selction*/
+.answer-btn.selected {
+  background-color: #d6dbf5;
+  border-color: #d6dbf5;
+}
+
+/*higlights correct selction*/
+.answer-btn.correct {
+  background-color: #94d7a2;
+  border-color: #94d7a2;
+}
+
+/*higlights incorrect selction*/
+.answer-btn.incorrect {
+  background-color: #f8bcbc;
+  border-color: #f8bcbc;
+}
+
+/*dims non selected selctions*/
+.answer-btn.dimmed {
+  opacity: 0.5;
+}
+
+/* added to fix */
+.check-btn,
+.play-again-btn {
     /*Button text*/
     color: #F5F7FB;
     font-family: Inter;
@@ -131,8 +175,38 @@ body {
      padding: 1.6em 3.75em;
      border-radius: 15px;
      border: 0;
+     
+    /*Button Experience*/
+    cursor: pointer;
 }
 
-.button-container {
-    margin: 1.25rem auto 1.5625rem;
+.warning-message {
+  font-family: "Karla", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  color: #ff5858;
+  margin-bottom: 16px;
+}
+
+.result-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.result-message {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  color: #293264;
+}
+
+
+/*Media Querries*/
+
+@media (max-width: 1000px) {
+  .answer-btn-container {
+      flex-direction: column;
+  }
 }

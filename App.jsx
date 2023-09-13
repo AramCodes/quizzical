@@ -1,28 +1,30 @@
 import React from "react"
-import MainScreen from "./components/MainScreen"
+import OpenScreen from "./components/OpenScreen"
+import EndScreen from "./components/EndScreen"
 import QuizScreen from "./components/QuizScreen"
 
-export default function App() {
-    
-    const [mainScreen, setMainScreen] = React.useState(true)
 
+export default function App() { 
     
-    
-    function switchScreen() {
-        setMainScreen(prevMainScreen => !prevMainScreen)
-    }
+    const [openScreen, setOpenScreen] = React.useState(true)
+    const [endScreen, setEndScreen] = React.useState(false)
+
     
     function startGame() {
-        switchScreen()
+        setOpenScreen(prevOpenScreen => !prevOpenScreen)
     }
     
-
-    return (
-            <main>
-                {mainScreen && <MainScreen handleClick={startGame}/>}
-                {!mainScreen && <QuizScreen />} 
-            </main>     
+    function endGame() {
+        setEndScreen(prevEndScreen => !prevEndScreen)
+    }
+    
+    
+    
+    return ( 
+        <main>
+            {openScreen && <OpenScreen handleClick={startGame}/>}
+            {!openScreen && <QuizScreen handleClick={endGame}/>} 
+            {endScreen && <EndScreen />}
+        </main>     
     )
 }
-
-//props questions are sent to QuizScreen
